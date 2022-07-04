@@ -2,13 +2,22 @@ package pl.coderslab.model;
 
 import javax.persistence.*;
 
-@Entity
+@Entity(name = "Category")
 public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
     private Long id;
     private String name;
+
+    public Category(Long id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
+    public Category() {
+
+    }
 
     public Long getId() {
         return id;
@@ -26,4 +35,8 @@ public class Category {
     public void setName(String name) {
         this.name = name;
     }
+
+
+
+
 }

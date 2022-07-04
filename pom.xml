@@ -51,16 +51,21 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
         </dependency>
+        <!--        W przypadku, gdy jako warstwy widoku chcemy używać plików jsp-->
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>jstl</artifactId>
         </dependency>
+
+<!--        W przypadku, gdy jako warstwy widoku chcemy używać plików jsp-->
         <dependency>
             <groupId>org.apache.tomcat.embed</groupId>
             <artifactId>tomcat-embed-jasper</artifactId>
         </dependency>
+
     </dependencies>
 
+<!--    opcjonalny plugin spring-boot-maven-plugin, dzięki któremu będzie można wygenerować wykonywalny plik .jar z gotowym programem-->
     <build>
         <plugins>
             <plugin>
