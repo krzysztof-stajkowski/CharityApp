@@ -1,0 +1,23 @@
+package pl.coderslab.model;
+
+import javax.persistence.*;
+import java.time.LocalDate;
+import java.time.LocalTime;
+
+@Entity
+public class Donation {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id", nullable = false)
+    private Long id;
+    private Integer quantity;
+    // private List<Category> categories;  ?????????????????????????????????
+    // private Object institution;          ?????????????????????????????????
+    private String street;
+    private String city;
+    private String zipCode;
+    private LocalDate pickUpDate;
+    private LocalTime pickUpTime;
+    private String pickUpComment;
+
+}
