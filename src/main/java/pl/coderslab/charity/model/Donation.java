@@ -1,8 +1,9 @@
-package pl.coderslab.model;
+package pl.coderslab.charity.model;
 
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.List;
 
 @Entity
 public class Donation {
@@ -11,13 +12,26 @@ public class Donation {
     @Column(name = "id", nullable = false)
     private Long id;
     private Integer quantity;
-    // private List<Category> categories;  ?????????????????????????????????
-    // private Object institution;          ?????????????????????????????????
+
+    @ManyToMany
+    private List<Category> categories;
+    @ManyToOne
+    @JoinColumn(name = "institution_id")
+    private Institution institution;
+
     private String street;
     private String city;
     private String zipCode;
     private LocalDate pickUpDate;
     private LocalTime pickUpTime;
     private String pickUpComment;
+
+    public Institution getInstitution() {
+        return institution;
+    }
+
+    public void setInstitution(Institution institution) {
+        this.institution = institution;
+    }
 
 }
